@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHD - 極簡現代首頁</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+  body { color:#333; background-color:#fff; line-height:1.6; overflow-x:hidden;}
+  a { text-decoration:none; color: inherit;}
+
+  /* Header */
+  header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; background:rgba(255,255,255,0.95); box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100;}
+  header .logo { font-size:24px; font-weight:bold; color:#333;}
+  nav a { margin-left:30px; font-weight:500; transition: color 0.3s;}
+  nav a:hover { color:#FFB3BA;}
+
+  /* Banner */
+  .banner { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 20px; position:relative; overflow:hidden; background:#f5f5f5; background-attachment:fixed; background-position:center; background-size:cover;}
+  .banner h1 { font-size:4rem; margin-bottom:20px; color:#333; white-space:nowrap; overflow:hidden; border-right:2px solid #333; display:inline-block;}
+  .banner p { font-size:1.5rem; color:#666; margin-bottom:30px;}
+  .banner button { padding:15px 30px; font-size:1rem; border:none; border-radius:30px; background:#FFDAC1; color:#333; cursor:pointer; transition: transform 0.3s, background 0.3s;}
+  .banner button:hover { transform: scale(1.05); background:#B5EAEA;}
+
+  /* Sections */
+  section { padding:100px 50px; text-align:center; position:relative;}
+  section h2 { font-size:2.5rem; margin-bottom:40px; color:#333;}
+  section p { font-size:1.1rem; color:#555; max-width:800px; margin:0 auto 30px;}
+
+  /* Products */
+  .products { display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
+  .product-card { background:#fff; border-radius:20px; padding:20px; width:250px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.5s, box-shadow 0.3s;}
+  .product-card:hover { transform: translateY(-10px) rotate(-1deg) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+  .product-card img { width:100%; border-radius:15px; margin-bottom:15px;}
+  .product-card h3 { margin-bottom:10px; color:#333;}
+  .product-card p { font-size:0.9rem; color:#666;}
+
+  /* Contact */
+  .contact-form { max-width:500px; margin:0 auto; text-align:left;}
+  .contact-form label { display:block; margin-bottom:5px; color:#333; }
+  .contact-form input, .contact-form textarea { width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:10px; }
+  .contact-form button { background:#B5EAEA; color:#333; border:none; padding:12px 25px; border-radius:25px; cursor:pointer; transition: background 0.3s, transform 0.3s;}
+  .contact-form button:hover { background:#FFB3BA; transform:scale(1.05); }
+
+  footer { background:#333; color:#fff; text-align:center; padding:30px 50px;}
+  footer a { color:#FFB3BA; margin:0 10px;}
+
+  /* 滾動淡入動畫 */
+  .animate { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out;}
+  .animate.show { opacity: 1; transform: translateY(0); }
+
+  /* Banner 打字動畫 */
+  @keyframes typing { from { width:0 } to { width:100% } }
+  @keyframes blink { 50% { border-color: transparent; } }
+  .typing { display:inline-block; overflow:hidden; border-right:2px solid #333; white-space:nowrap; animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite;}
+
+  /* 產品浮動動畫 */
+  .float { animation: float 4s ease-in-out infinite alternate;}
+  @keyframes float { 0% { transform: translateY(0);} 100% { transform: translateY(-10px);} }
+
+  /* 視差效果 */
+  .parallax { background-attachment: fixed; background-size: cover; background-position: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CHD</div>
+  <nav>
+    <a href="#about">關於我們</a>
+    <a href="#products">產品/服務</a>
+    <a href="#contact">聯絡我們</a>
+  </nav>
+</header>
+
+<section class="banner parallax animate" style="background-image:url('https://via.placeholder.com/1600x900');">
+  <h1 class="typing">CHD 極簡現代主義</h1>
+  <p class="animate">極簡設計，傳遞現代生活的美學與質感</p>
+  <button class="animate">了解更多</button>
+</section>
+
+<section id="about" class="animate parallax" style="background-color:#f0f0f0;">
+  <h2 class="animate">關於我們</h2>
+  <p class="animate">CHD 專注於創造極簡、現代且具有藝術感的設計。每一個細節都呈現出我們對生活美學的執著。</p>
+</section>
+
+<section id="products" class="animate">
+  <h2 class="animate">產品 / 服務</h2>
+  <div class="products">
+    <div class="product-card animate float">
+      <img src="https://via.placeholder.com/250x150" alt="產品1">
+      <h3>產品 1</h3>
+      <p>簡約而不簡單的現代設計，讓生活更有品味。</p>
+    </div>
+    <div class="product-card animate float">
+      <img src="https://via.placeholder.com/250x150" alt="產品2">
+      <h3>產品 2</h3>
+      <p>每個細節都經過精心設計，符合極簡美學。</p>
+    </div>
+    <div class="product-card animate float">
+      <img src="https://via.placeholder.com/250x150" alt="產品3">
+      <h3>產品 3</h3>
+      <p>結合現代感與功能性，打造優雅生活空間。</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="animate parallax" style="background-color:#f9f9f9;">
+  <h2 class="animate">聯絡我們</h2>
+  <form class="contact-form animate">
+    <label for="name">姓名</label>
+    <input type="text" id="name" placeholder="請輸入姓名">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="請輸入Email">
+    <label for="message">訊息</label>
+    <textarea id="message" rows="5" placeholder="請輸入訊息"></textarea>
+    <button type="submit">送出訊息</button>
+  </form>
+</section>
+
+<footer class="animate">
+  <p>&copy; 2025 CHD. All Rights Reserved.</p>
+  <p>
+    <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LINE</a>
+  </p>
+</footer>
+
+<script>
+  // 滾動動畫
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  }, {threshold:0.2});
+
+  document.querySelectorAll('.animate').forEach(el=>{
+    observer.observe(el);
+  });
+
+  // Banner 視差效果
+  window.addEventListener('scroll', function(){
+    const banner = document.querySelector('.banner');
+    let offset = window.scrollY;
+    banner.style.backgroundPositionY = offset * 0.5 + 'px';
+  });
+</script>
+
+</body>
+</html>
